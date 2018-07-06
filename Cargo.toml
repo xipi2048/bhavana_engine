@@ -4,3 +4,4 @@ version = "0.1.0"
 authors = ["trit <trit@quantumtrip.org>"]
 
 [dependencies]
+gfx-hal = { git = "https://github.com/gfx-rs/gfx" }

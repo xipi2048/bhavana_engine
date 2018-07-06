@@ -2,13 +2,17 @@ extern crate zazen_engine;
 
 use zazen_engine::conf::WindowSettings;
 use zazen_engine::context::ContextBuilder;
+use zazen_engine::event;
 
 fn main() {
-	let _context = ContextBuilder::new()
+	let mut context =  ContextBuilder::new()
 					.window_settings(WindowSettings{
-						width: 900,
-						height: 600,
+						width: 1920/2,
+						height: 1080/2,
 						title: "Trit's Adventure"
 					})
-					.build();
+					.build()
+					.unwrap();
+	
+	event::run(&context);
 }

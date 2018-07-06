@@ -1,8 +1,8 @@
-extern crate zazen_engine;
+extern crate bhavana_engine;
 
-use zazen_engine::conf::WindowSettings;
-use zazen_engine::context::ContextBuilder;
-use zazen_engine::event;
+use bhavana_engine::conf::WindowSettings;
+use bhavana_engine::context::ContextBuilder;
+use bhavana_engine::event;
 
 fn main() {
 	let mut context =  ContextBuilder::new()

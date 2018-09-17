@@ -21,4 +21,12 @@ impl SystemBuilder {
     pub fn build(&self) -> EngineResult<System> {
         Ok(System {})
     }
+
+    pub fn run(&self) -> EngineResult<> {
+        /*
+            
+        */
+        
+        Ok()
+    }
 }

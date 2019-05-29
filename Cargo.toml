@@ -4,4 +4,10 @@ version = "0.1.0"
 authors = ["trit <trit@quantumtrip.org>"]
 
 [dependencies]
-gfx-hal = { git = "https://github.com/gfx-rs/gfx" }
+winit = "0.19.1"            # Cross-platform window creation library
+glutin = "0.21.0"           # Cross-platform OpenGL context provider
+gfx-hal = "0.2.0"           # gfx-rs hardware abstraction layer
+gfx-backend-gl = "0.2.0"    # OpenGL backend for gfx-rs
+rodio = "0.8.1"             # Audio playback library
+gilrs = "0.7.1"             # Game Input Library for Rust
+image = "0.21.1"            # Imaging library written in Rust. Provides basic filters and decoders for the most common image for…

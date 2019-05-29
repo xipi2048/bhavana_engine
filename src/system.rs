@@ -22,11 +22,11 @@ impl SystemBuilder {
         Ok(System {})
     }
 
-    pub fn run(&self) -> EngineResult<> {
+    pub fn run(&self) -> EngineResult<()> {
         /*
             
         */
         
-        Ok()
+        Ok(())
     }
 }

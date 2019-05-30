@@ -1,5 +1,5 @@
-pub(crate) struct Conf {
-	window_settings: WindowSettings
+pub struct Conf {
+	pub window_settings: WindowSettings
 }
 
 impl Conf {

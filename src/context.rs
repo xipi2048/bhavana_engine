@@ -1,15 +1,14 @@
 use conf;
 
 pub struct Context {}
-impl Context {
-    conf: conf::Conf
+pub struct ContextBuilder {
+    _conf: conf::Conf
 }
 
-pub struct ContextBuilder {}
 impl ContextBuilder {
     pub fn new() -> Self {
         Self {
-            conf: conf::Conf::new()
+            _conf: conf::Conf::new()
         }
     }
 
@@ -23,4 +22,8 @@ impl ContextBuilder {
 
         }
     }
+}
+
+impl Context {
+    
 }

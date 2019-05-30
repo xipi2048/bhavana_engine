@@ -8,7 +8,7 @@ pub struct ContextBuilder {
 impl ContextBuilder {
     pub fn new() -> Self {
         Self {
-            _conf: conf::Conf::new()
+            _conf: conf::Conf::default()
         }
     }
 

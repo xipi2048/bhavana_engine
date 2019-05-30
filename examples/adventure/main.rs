@@ -1,7 +1,7 @@
-extern crate bhavana_engine;
+extern crate bhavana_engine as bheng;
 
-use bhavana_engine::conf::WindowSettings;
-use bhavana_engine::system::SystemBuilder;
+use bheng::conf::WindowSettings;
+use bheng::system::SystemBuilder;
 
 fn main() {
 	let mut system = SystemBuilder::new()
@@ -14,11 +14,11 @@ fn main() {
 
 	system.run_forever(|event| {
 		match event {
-			bhavana_engine::Event::WindowEvent {
-				event: bhavana_engine::WindowEvent::CloseRequested,
+			bheng::Event::WindowEvent {
+				event: bheng::WindowEvent::CloseRequested,
 				..
-			} => bhavana_engine::ControlFlow::Break,
-			_ => bhavana_engine::ControlFlow::Continue
+			} => bheng::ControlFlow::Break,
+			_ => bheng::ControlFlow::Continue
 		}		
 	});
 }

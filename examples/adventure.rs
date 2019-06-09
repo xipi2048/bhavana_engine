@@ -10,6 +10,9 @@ fn main() {
 			height: 1080 / 2,
 			title: "Trit's Adventure",
 		})
+		.with_state_manager(Game {
+			
+		})
 		.build()
 		.unwrap();
 }

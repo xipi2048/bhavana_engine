@@ -18,6 +18,10 @@ impl SystemBuilder {
         self
     }
 
+    pub fn with_state_manager(&self, _state_manager: state::StateManager) -> &self {
+        self
+    }
+
     pub fn build(&self) -> EngineResult<System> {
         Ok(System {})
     }

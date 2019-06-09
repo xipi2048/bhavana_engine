@@ -5,10 +5,22 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "(Windows) Launch Adventure",
+			"name": "Launch Example - Adventure",
+			"type": "cppdbg",			
+			"request": "launch",
+			"program": "${workspaceFolder}/target/debug/examples/adventure",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"preLaunchTask": "cargo build adventure"
+		},
+		{
+			"name": "(Windows) Launch Example - Adventure",
 			"type": "cppvsdbg",
 			"request": "launch",
-			"program": "target/debug/examples/adventure.exe",
+			"program": "${workspaceFolder}/target/debug/examples/adventure.exe",
 			"args": [],
 			"stopAtEntry": false,
 			"cwd": "${workspaceFolder}",

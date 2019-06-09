@@ -6,13 +6,9 @@ use std::fmt::{Display, Formatter};
 pub type EngineResult<T> = StdResult<T, EngineError>;
 
 #[derive(Debug)]
-pub struct EngineError {
+pub struct EngineError {}
 
-}
-
-impl StdError for EngineError {
-
-}
+impl StdError for EngineError {}
 
 impl Display for EngineError {
 	fn fmt(&self, out: &mut Formatter) -> FmtResult {

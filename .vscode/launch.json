@@ -15,6 +15,18 @@
 			"environment": [],
 			"externalConsole": false,
 			"preLaunchTask": "cargo build adventure"
+		},
+		{
+			"name": "(Windows) Launch Example - Adventure",
+			"type": "cppvsdbg",
+			"request": "launch",
+			"program": "${workspaceFolder}/target/debug/examples/adventure.exe",
+			"args": [],
+			"stopAtEntry": false,
+			"cwd": "${workspaceFolder}",
+			"environment": [],
+			"externalConsole": false,
+			"preLaunchTask": "cargo build adventure"
 		}
 	]
 }

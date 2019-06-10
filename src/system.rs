@@ -1,5 +1,6 @@
 use conf;
 use window;
+use state;
 use error::EngineResult;
 
 pub struct System {
@@ -8,17 +9,24 @@ pub struct System {
 
 pub struct SystemBuilder {
     conf: conf::Conf,
+    state_manager: state::StateManager
 }
 
 impl SystemBuilder {
     pub fn new() -> Self {
         Self {
             conf: conf::Conf::default(),
+            state_manager: state::StateManager {}
         }
     }
 
     pub fn window_settings(&mut self, settings: conf::WindowSettings) -> &Self {
         self.conf.window_settings = settings;
+        self
+    }
+
+    pub fn with_state_manager(&mut self, state_manager: state::StateManager) -> &Self {
+        self.state_manager = state_manager;
         self
     }
 

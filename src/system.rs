@@ -15,8 +15,7 @@ pub struct SystemBuilder {
 impl SystemBuilder {
     pub fn new() -> Self {
         Self {
-            conf: conf::Conf::default(),
-            state_manager: state::StateManager {}
+            conf: conf::Conf::default()
         }
     }
 
@@ -25,7 +24,7 @@ impl SystemBuilder {
         self
     }
 
-    pub fn with_state_manager(&mut self, state_manager: state::StateManager) -> &Self {
+    pub fn with_state_manager<T>(&mut self, state_manager: state::StateManager) -> &Self {
         self.state_manager = state_manager;
         self
     }

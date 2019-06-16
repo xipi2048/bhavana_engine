@@ -8,8 +8,7 @@ pub struct System {
 }
 
 pub struct SystemBuilder {
-    conf: conf::Conf,
-    state_manager: state::StateManager
+    conf: conf::Conf
 }
 
 impl SystemBuilder {
@@ -19,13 +18,15 @@ impl SystemBuilder {
         }
     }
 
-    pub fn window_settings(&mut self, settings: conf::WindowSettings) -> &Self {
+    pub fn window_settings(&mut self, settings: conf::WindowSettings) -> &mut Self {
         self.conf.window_settings = settings;
         self
     }
 
-    pub fn with_state_manager<T>(&mut self, state_manager: state::StateManager) -> &Self {
-        self.state_manager = state_manager;
+    pub fn with_state_manager<T>(&mut self, state_manager: T) -> &mut Self 
+    where 
+        T: state::StateManager
+    {
         self
     }
 

@@ -1,8 +1,10 @@
 extern crate bhavana_engine as bheng;
 
-use bheng::conf::WindowSettings;
-use bheng::system::SystemBuilder;
-use bheng::state::StateManager;
+use bheng::{
+	conf::WindowSettings,
+	system::SystemBuilder,
+	state::StateManager
+};
 
 fn main() {
 	let mut system = SystemBuilder::new()

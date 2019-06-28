@@ -1,15 +1,19 @@
-
-use winit::{
-    Event, WindowEvent, ControlFlow
+use bhavana_engine::{
+    winit::{Event, WindowEvent, ControlFlow},
+    state::StateManager
 };
 
-pub trait StateManager {
-	fn handle_event(&self, event: Event) -> ControlFlow;
+pub struct Game {}
+
+impl Game {
+    pub fn new() -> Self {
+        Self {
+
+        }
+    }
 }
 
-pub struct SimpleStateManager {}
-
-impl StateManager for SimpleStateManager {
+impl StateManager for Game {
     fn handle_event(&self, event: Event) -> ControlFlow {
         match event {
             Event::WindowEvent {

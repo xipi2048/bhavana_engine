@@ -3,8 +3,8 @@ extern crate gfx_hal as hal;
 extern crate gfx_backend_gl as back;
 extern crate glutin as win;
 
-use conf;
-use error::EngineResult;
+use crate::conf;
+use crate::error::EngineResult;
 
 pub struct Window {
     _window: win::Window,
@@ -44,7 +44,7 @@ impl WindowBuilder {
 }
 
 impl Window {
-    pub fn run_forever<T>(&mut self, callback: T) 
+    pub fn run<T>(&mut self, callback: T) 
         where T: FnMut(win::Event) -> win::ControlFlow
     {        
         self.events_loop.run_forever(callback)

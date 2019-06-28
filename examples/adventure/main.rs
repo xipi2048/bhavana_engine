@@ -2,9 +2,10 @@ extern crate bhavana_engine as bheng;
 
 use bheng::{
 	conf::WindowSettings,
-	system::SystemBuilder,
-	state::StateManager
+	system::SystemBuilder
 };
+
+mod game;
 
 fn main() {
 	let mut system = SystemBuilder::new()
@@ -12,25 +13,8 @@ fn main() {
 			title: "Trit's Adventure",
 			..WindowSettings::default()
 		})
-		.with_state_manager(Game {
-			
-		})
 		.build()
 		.unwrap();
 
-	system.run_forever(|event| {
-		match event {
-			bheng::Event::WindowEvent {
-				event: bheng::WindowEvent::CloseRequested,
-				..
-			} => bheng::ControlFlow::Break,
-			_ => bheng::ControlFlow::Continue
-		}		
-	});
-}
-
-struct Game {}
-
-impl StateManager for Game {
-
+	system.run(game::Game::new());
 }

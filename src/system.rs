@@ -1,14 +1,14 @@
-use conf;
-use window;
-use state;
-use error::EngineResult;
+use crate::conf;
+use crate::window;
+use crate::state;
+use crate::error::EngineResult;
 
 pub struct System {
     window: window::Window
 }
 
 pub struct SystemBuilder {
-    conf: conf::Conf
+    conf: conf::Conf,
 }
 
 impl SystemBuilder {
@@ -23,7 +23,7 @@ impl SystemBuilder {
         self
     }
 
-    pub fn with_state_manager<T>(&mut self, state_manager: T) -> &mut Self 
+    pub fn with_state_manager<T>(&mut self, _state_manager: T) -> &mut Self 
     where 
         T: state::StateManager
     {
@@ -37,15 +37,23 @@ impl SystemBuilder {
             .unwrap();
 
         Ok(System {
-          window: window  
+          window: window
         })
     }    
 }
 
 impl System {
-    pub fn run_forever<T>(&mut self, callback: T) 
-        where T: FnMut(winit::Event) -> winit::ControlFlow
-    {        
-        self.window.run_forever(callback)
+    // pub fn run<T>(&mut self, callback: T) 
+    //     where T: FnMut(winit::Event) -> winit::ControlFlow
+    // {        
+    //     self.window.run(callback)
+    // }
+
+    pub fn run<T>(&mut self, state_manager: T)
+        where T: state::StateManager
+    {
+        self.window.run(|event| {
+            state_manager.handle_event(event)
+        });
     }
 }
